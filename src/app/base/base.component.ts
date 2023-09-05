@@ -92,6 +92,8 @@ export class BaseComponent implements OnInit{
         categoria: this.categorias[0],
         fecha: new Date(),
       };
+      // Generamos las fechas del nuevo movimiento (En caso de que no exista)
+      this.generarFechas();
     } else {
       alert('Por favor, complete todos los campos correctamente.');
     }

@@ -64,6 +64,7 @@
 /* Estilos para el formulario de búsqueda */
 .search-form {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  width: 80%;
   background-color: #f0f0f0;
   padding: 20px;
   margin: 20px 0;
@@ -295,8 +296,10 @@ li {
   margin-top: 50px;
 }
 
+/* Formulario de Busqueda por fecha */
 
 .formulario-busqueda {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   background-color: #84d670;
   padding: 20px;
   border: 1px solid #212121;
