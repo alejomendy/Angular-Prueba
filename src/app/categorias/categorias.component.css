@@ -1,5 +1,6 @@
 /* Estilos para la lista de categorías */
 h2 {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 1.5rem;
     margin-bottom: 10px;
   }
@@ -10,20 +11,22 @@ h2 {
   }
   
   li {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     margin-bottom: 5px;
     padding: 5px;
-    border: 1px solid #ccc;
+    border: 1px solid #212121;
     border-radius: 5px;
-    background-color: #f8f8f8;
+    background-color: #84d670;
   }
 
 /* Estilos para el formulario de agregar categoría */
 .agregar-categoria {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     margin-top: 20px;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid #212121;
     border-radius: 5px;
-    background-color: #f8f8f8;
+    background-color: #84d670;
   }
   
   .agregar-categoria div {
@@ -36,22 +39,156 @@ h2 {
   }
   
   .agregar-categoria input[type="text"] {
-    width: 100%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    width: 95%;
     padding: 5px;
-    border: 1px solid #ccc;
+    border: 1px solid #212121;
     border-radius: 3px;
   }
   
   .agregar-categoria button {
-    padding: 5px 10px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
+    padding: 10px 25px;
+    background-color: #ffffff;
+    color: #000000;
     border-radius: 3px;
     cursor: pointer;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 15px;
   }
   
   .agregar-categoria button:hover {
+    color: #fff;
     background-color: #0056b3;
   }
   
+  /* Estilos columna en pantalla pequeña */
+
+.col-sm-12 {
+  width: 100%;
+  float: left;
+}
+
+.col-sm-10 {
+  width: 83.33%;
+  float: left;
+}
+
+.col-sm-8 {
+  width: 66.66%;
+  float: left;
+}
+
+.col-sm-6 {
+  width: 50.00%;
+  float: left;
+}
+
+.col-sm-4 {
+  width: 33.33%;
+  float: left;
+}
+
+.col-sm-2 {
+  width: 16.66%;
+  float: left;
+}
+
+/* Estilos columna en pantalla mediana */
+
+@media (min-width: 576px) {
+  .col-md-12 {
+    width: 100%;
+    float: left;
+  }
+}
+
+
+@media (min-width: 576px) {
+  .col-md-10 {
+    width: 83.33%;
+    float: left;
+  }
+}
+
+
+@media (min-width: 576px) {
+  .col-md-8 {
+    width: 66.66%;
+    float: left;
+  }
+}
+
+@media (min-width: 576px) {
+  .col-md-6 {
+    width: 50.00%;
+    float: left;
+  }
+}
+
+@media (min-width: 576px) {
+  .col-md-4 {
+    width: 33.33%;
+    float: left;
+  }
+}
+
+@media (min-width: 576px) {
+  .col-md-2 {
+    width: 16.66%;
+    float: left;
+  }
+}
+
+/* Estilos columna en pantalla grande */
+
+@media (min-width: 768px) {
+  .col-lg-12 {
+    width: 100%;
+    float: left;
+  }
+}
+
+
+@media (min-width: 768px) {
+  .col-lg-10 {
+    width: 83.33%;
+    float: left;
+  }
+}
+
+
+@media (min-width: 768px) {
+  .col-lg-8 {
+    width: 66.66%;
+    float: left;
+  }
+}
+
+@media (min-width: 768px) {
+  .col-lg-6 {
+    width: 50.00%;
+    float: left;
+  }
+}
+
+@media (min-width: 768px) {
+  .col-lg-4 {
+    width: 33.33%;
+    float: left;
+  }
+}
+
+@media (min-width: 768px) {
+  .col-lg-2 {
+    width: 16.66%;
+    float: left;
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+
+.invisible {
+  visibility: hidden
+}

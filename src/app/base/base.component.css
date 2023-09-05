@@ -40,6 +40,7 @@
 .movimiento-form input[type="number"],
 .movimiento-form input[type="date"],
 .movimiento-form select {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   width: 100%;
   padding: 5px;
   margin-bottom: 10px;
@@ -58,6 +59,7 @@
 }
 
 .movimiento-form button:hover {
+  color: #fff;
   background-color: #0056b3;
 }
 
@@ -90,6 +92,7 @@
 }
 
 .search-button {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   background-color: #fff;
   color: #000000;
   padding: 10px 25px;
@@ -99,13 +102,19 @@
 }
 
 .search-button:hover {
+  color: #fff;
   background-color: #0056b3;
 }
 
 /* Estilos para la lista de busquedas */
 h2 {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   font-size: 1.5rem;
   margin-bottom: 10px;
+}
+
+h4 {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 ul {
@@ -333,6 +342,7 @@ select {
 }
 
 button {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   background-color: #fff;
   color: #000000;
   border-radius: 15px;
@@ -343,6 +353,7 @@ button {
 }
 
 button:hover {
+  color: #fff;
   background-color: #0056b3;
 }
 
