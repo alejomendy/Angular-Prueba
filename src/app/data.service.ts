@@ -1,6 +1,7 @@
 import { Injectable, OnInit } from '@angular/core';
 import { Categoria } from './categoria'; 
 import { Movimiento } from './movimiento'; 
+import { LocalStorageService } from './local-storage.service';
 
 @Injectable({
   providedIn: 'root',
@@ -9,41 +10,41 @@ export class DataService implements OnInit{
   private categorias: Categoria[] = [];
   private movimientos: Movimiento[] = [];
 
-  constructor() {}
+  constructor(private localStorageService: LocalStorageService) {}
 
   ngOnInit(): void {
-    this.generarEjemplos(); 
+    this.getCategorias();
+    this.getMovimientos();
   }
 
   getCategorias(): Categoria[] {
-    return this.categorias;
+    let data = this.localStorageService.leerCategorias()
+    if (data != null){
+      this.categorias = data
+      return data;
+    } else {
+      return this.categorias
+    }
   }
 
   getMovimientos(): Movimiento[] {
-    return this.movimientos;
+    let data = this.localStorageService.leerMovimientos()
+    if (data != null){
+      this.movimientos = data
+      return data;
+    } else {
+      return this.movimientos
+    }
   }
 
   agregarCategoria(categoria: Categoria): void {
     this.categorias.push(categoria);
+    this.localStorageService.guardarCategorias(this.categorias);
   }
 
   agregarMovimiento(movimiento: Movimiento): void {
     this.movimientos.push(movimiento);
-  }
-
-  private generarEjemplos(): void {
-    // Ejemplos de categorías
-    const categoria1 = new Categoria('Alimentación', 'Gastos relacionados con comida');
-    const categoria2 = new Categoria('Transporte', 'Gastos de transporte');
-    const categoria3 = new Categoria('Ventas', 'Ventas virtuales');
-
-    // Ejemplos de movimientos
-    const movimiento1 = new Movimiento('Compra de supermercado','Egreso', 'Compras mensuales', 100, categoria1, new Date());
-    const movimiento2 = new Movimiento('Gasolina','Egreso', 'Llenado de gasolina', 50, categoria2, new Date());
-    const movimiento3 = new Movimiento('Venta de Facebook','Ingreso', 'Venta telefono usado', 20, categoria3, new Date());
-
-    // Agregar ejemplos a las listas
-    this.categorias.push(categoria1, categoria2, categoria3);
-    this.movimientos.push(movimiento1, movimiento2, movimiento3);
+    console.log("This.movimientos:" + this.movimientos);
+    this.localStorageService.guardarMovimiento(this.movimientos);
   }
 }

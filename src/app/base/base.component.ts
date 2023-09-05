@@ -17,6 +17,12 @@ export class BaseComponent implements OnInit{
   tipoBuscado: string = '';
   tipos: string[] = ['egreso', 'ingreso'];
   balance: number = 0;
+  balancePorFecha: number = 0;
+  busquedaPorFecha: Movimiento[] = [];
+  aniosBusqueda: string[] = [];
+  mesBusqueda: string = '0';
+  anioBusqueda: string = '2023';
+  tipoSeleccionado: string = '';
 
 
   constructor(private dataService: DataService) {}
@@ -25,11 +31,42 @@ export class BaseComponent implements OnInit{
     this.dataService.ngOnInit();
     this.categorias = this.dataService.getCategorias();
     this.movimientos = this.dataService.getMovimientos();
+    this.generarFechas();
+  }
+
+  generarFechas(){
+    for (let index = 0; index < this.movimientos.length; index++) {
+      let movimiento = this.movimientos[index];
+      let movimientoFecha = movimiento.fecha.toString()
+      let resultado = movimientoFecha.substring(0,4)
+      if (!this.aniosBusqueda.includes(resultado)) {
+        this.aniosBusqueda.push(resultado)
+      }
+    }
+  }
+
+  buscarMovimientosPorMesYAnio() {
+    // Filtra los movimientos por mes y año seleccionados
+    this.busquedaPorFecha = this.movimientos.filter(movimiento => {
+      const tipo = movimiento.tipo.toLowerCase();
+      const fecha = new Date(movimiento.fecha);
+      const mes = (fecha.getMonth() + 1).toString().padStart(2, '0'); // Formatea el mes
+      const anio = fecha.getFullYear().toString(); // Formatea el año
+      return mes === this.mesBusqueda && anio === this.anioBusqueda && tipo === this.tipoSeleccionado.toLowerCase();
+    });
+    // Llama a la funcion para calcular el balance de estos datos
+    this.calcularBalancePorFecha();
+  }
+
+  calcularBalancePorFecha() {
+    // Calcula el balance sumando los montos de los movimientos filtrados
+    this.balancePorFecha = this.busquedaPorFecha.reduce((total, movimiento) => {
+      return total + (movimiento.tipo.toLowerCase() === 'ingreso' ? movimiento.monto : -movimiento.monto);
+    }, 0);
   }
 
   // Para agregar nuevos valores
-  // nuevaCategoria: Categoria = new Categoria('', '');
-  
+
   nuevoMovimiento: Movimiento = {
     nombre: '',
     tipo: '',
@@ -38,18 +75,6 @@ export class BaseComponent implements OnInit{
     categoria: this.categorias[0], 
     fecha: new Date(),
   };
-
-  // Agregar
-  // agregarCategoria(): void {
-  //   if (this.nuevaCategoria.nombre && this.nuevaCategoria.detalle) {
-  //     // Validar que se ingresen valores para nombre y detalle
-  //     this.dataService.agregarCategoria(this.nuevaCategoria);
-  //     // Limpiar el formulario después de agregar
-  //     this.nuevaCategoria = new Categoria('', '');
-  //   } else {
-  //     alert('Por favor, ingrese un nombre y un detalle para la categoría.');
-  //   }
-  // }
 
   agregarMovimiento(): void {
     if (
@@ -90,6 +115,21 @@ export class BaseComponent implements OnInit{
       }
     }, 0);
   }
+
+  // calcularBalancePorTipoYFecha(tipo: string, fecha: string): number {
+  //   // Filtra los movimientos por tipo y fecha
+  //   const movimientosFiltrados = this.movimientos.filter(movimiento =>
+  //     movimiento.tipo.toLowerCase() === tipo.toLowerCase() &&
+  //     movimiento.fecha === fecha
+  //   );
+  
+  //   // Calcula el balance sumando los montos de los movimientos
+  //   const balance = movimientosFiltrados.reduce((total, movimiento) => {
+  //     return total + (movimiento.tipo.toLowerCase() === 'ingreso' ? movimiento.monto : -movimiento.monto);
+  //   }, 0);
+  
+  //   return balance;
+  // }
 }
 
 
