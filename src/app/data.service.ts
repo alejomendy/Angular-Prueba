@@ -9,11 +9,11 @@ export class DataService implements OnInit{
   private categorias: Categoria[] = [];
   private movimientos: Movimiento[] = [];
 
+  constructor() {}
+
   ngOnInit(): void {
     this.generarEjemplos(); 
   }
-
-  constructor() {}
 
   getCategorias(): Categoria[] {
     return this.categorias;

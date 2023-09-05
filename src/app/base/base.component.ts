@@ -4,7 +4,7 @@ import { Movimiento } from '../movimiento';
 import { DataService } from '../data.service';
 
 @Component({
-  selector: 'app-base',
+  selector: 'app-categorias',
   templateUrl: './base.component.html',
   styleUrls: ['./base.component.css']
 })
@@ -28,7 +28,8 @@ export class BaseComponent implements OnInit{
   }
 
   // Para agregar nuevos valores
-  nuevaCategoria: Categoria = new Categoria('', '');
+  // nuevaCategoria: Categoria = new Categoria('', '');
+  
   nuevoMovimiento: Movimiento = {
     nombre: '',
     tipo: '',
@@ -39,16 +40,16 @@ export class BaseComponent implements OnInit{
   };
 
   // Agregar
-  agregarCategoria(): void {
-    if (this.nuevaCategoria.nombre && this.nuevaCategoria.detalle) {
-      // Validar que se ingresen valores para nombre y detalle
-      this.dataService.agregarCategoria(this.nuevaCategoria);
-      // Limpiar el formulario después de agregar
-      this.nuevaCategoria = new Categoria('', '');
-    } else {
-      alert('Por favor, ingrese un nombre y un detalle para la categoría.');
-    }
-  }
+  // agregarCategoria(): void {
+  //   if (this.nuevaCategoria.nombre && this.nuevaCategoria.detalle) {
+  //     // Validar que se ingresen valores para nombre y detalle
+  //     this.dataService.agregarCategoria(this.nuevaCategoria);
+  //     // Limpiar el formulario después de agregar
+  //     this.nuevaCategoria = new Categoria('', '');
+  //   } else {
+  //     alert('Por favor, ingrese un nombre y un detalle para la categoría.');
+  //   }
+  // }
 
   agregarMovimiento(): void {
     if (
@@ -89,7 +90,6 @@ export class BaseComponent implements OnInit{
       }
     }, 0);
   }
-
 }
 
 

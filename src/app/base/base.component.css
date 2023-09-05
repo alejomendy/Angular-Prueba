@@ -1,36 +1,19 @@
-/* Estilos para la lista de categorías */
-h2 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-  }
-  
-  ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  li {
-    margin-bottom: 5px;
-    padding: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #f8f8f8;
-  }
-  
   /* Estilos para la tabla de movimientos */
   table {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
   }
   
   th, td {
+    border: 1px solid #333;
     padding: 10px;
     text-align: left;
   }
   
   th {
-    background-color: #333;
+    background-color: #84d670;
     color: #fff;
   }
   
@@ -38,7 +21,87 @@ h2 {
     background-color: #f2f2f2;
   }
   
-  /* Estilos para la lista de categorías */
+/* Estilos para el formulario de movimiento */
+.movimiento-form {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  margin: 20px;
+  padding: 15px;
+  border: 1px solid #313131;
+  border-radius: 5px;
+  background-color: #84d670;
+  max-width: 400px;
+}
+
+.movimiento-form label {
+  font-weight: bold;
+}
+
+.movimiento-form input[type="text"],
+.movimiento-form input[type="number"],
+.movimiento-form input[type="date"],
+.movimiento-form select {
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #313131;
+  border-radius: 3px;
+}
+
+.movimiento-form button {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  padding: 10px 15px;
+  background-color: #ffffff;
+  color: #000000;
+  border-radius: 15px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.movimiento-form button:hover {
+  background-color: #0056b3;
+}
+
+/* Estilos para el formulario de búsqueda */
+.search-form {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  background-color: #f0f0f0;
+  padding: 20px;
+  margin: 20px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #84d670;
+  border: 1px solid #313131;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-label {
+  font-weight: bold;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #313131;
+  border-radius: 3px;
+}
+
+.search-button {
+  background-color: #fff;
+  color: #000000;
+  padding: 10px 25px;
+  border-radius: 15px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.search-button:hover {
+  background-color: #00ff22;
+}
+
+/* Estilos para la lista de busquedas */
 h2 {
   font-size: 1.5rem;
   margin-bottom: 10px;
@@ -57,115 +120,169 @@ li {
   background-color: #f8f8f8;
 }
 
-/* Estilos para el formulario de agregar categoría */
-.agregar-categoria {
-  margin-top: 20px;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background-color: #f8f8f8;
-}
+/* Estilos para responsive */
 
-.agregar-categoria div {
-  margin-bottom: 10px;
-}
-
-.agregar-categoria label {
-  display: block;
-  font-weight: bold;
-}
-
-.agregar-categoria input[type="text"] {
-  width: 100%;
-  padding: 5px;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-}
-
-.agregar-categoria button {
-  padding: 5px 10px;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 3px;
-  cursor: pointer;
-}
-
-.agregar-categoria button:hover {
-  background-color: #0056b3;
-}
-
-/* Estilos para el formulario de movimiento */
-.movimiento-form {
-  margin: 20px;
-  padding: 15px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background-color: #f8f8f8;
-  max-width: 400px;
-}
-
-.movimiento-form label {
-  font-weight: bold;
-}
-
-.movimiento-form input[type="text"],
-.movimiento-form input[type="number"],
-.movimiento-form input[type="date"],
-.movimiento-form select {
-  width: 100%;
-  padding: 5px;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-}
-
-.movimiento-form button {
-  padding: 5px 10px;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 3px;
-  cursor: pointer;
-}
-
-.movimiento-form button:hover {
-  background-color: #0056b3;
-}
-
-/* Estilos para el formulario de búsqueda */
-.search-form {
-  background-color: #f0f0f0;
+.container {
+  max-width: 1600px;
+  margin: 0 auto;
   padding: 20px;
-  margin: 20px 0;
-  border: 1px solid #ccc;
-  border-radius: 5px;
 }
 
-.form-group {
-  margin-bottom: 15px;
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
 }
 
-.form-label {
-  font-weight: bold;
-}
+/* Estilos columna en pantalla pequeña */
 
-.form-control {
+.col-sm-12 {
   width: 100%;
+  float: left;
+}
+
+.col-sm-10 {
+  width: 83.33%;
+  float: left;
+}
+
+.col-sm-8 {
+  width: 66.66%;
+  float: left;
+}
+
+.col-sm-6 {
+  width: 50.00%;
+  float: left;
+}
+
+.col-sm-4 {
+  width: 33.33%;
+  float: left;
+}
+
+.col-sm-2 {
+  width: 16.66%;
+  float: left;
+}
+
+/* Estilos columna en pantalla mediana */
+
+@media (min-width: 576px) {
+  .col-md-12 {
+    width: 100%;
+    float: left;
+  }
+}
+
+
+@media (min-width: 576px) {
+  .col-md-10 {
+    width: 83.33%;
+    float: left;
+  }
+}
+
+
+@media (min-width: 576px) {
+  .col-md-8 {
+    width: 66.66%;
+    float: left;
+  }
+}
+
+@media (min-width: 576px) {
+  .col-md-6 {
+    width: 50.00%;
+    float: left;
+  }
+}
+
+@media (min-width: 576px) {
+  .col-md-4 {
+    width: 33.33%;
+    float: left;
+  }
+}
+
+@media (min-width: 576px) {
+  .col-md-2 {
+    width: 16.66%;
+    float: left;
+  }
+}
+
+/* Estilos columna en pantalla grande */
+
+@media (min-width: 768px) {
+  .col-lg-12 {
+    width: 100%;
+    float: left;
+  }
+}
+
+
+@media (min-width: 768px) {
+  .col-lg-10 {
+    width: 83.33%;
+    float: left;
+  }
+}
+
+
+@media (min-width: 768px) {
+  .col-lg-8 {
+    width: 66.66%;
+    float: left;
+  }
+}
+
+@media (min-width: 768px) {
+  .col-lg-6 {
+    width: 50.00%;
+    float: left;
+  }
+}
+
+@media (min-width: 768px) {
+  .col-lg-4 {
+    width: 33.33%;
+    float: left;
+  }
+}
+
+@media (min-width: 768px) {
+  .col-lg-2 {
+    width: 16.66%;
+    float: left;
+  }
+}
+
+/* Estilo columna */
+
+.col {
   padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 3px;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+  background-color: #f9f9f9;
+  text-align: center;
 }
 
-.search-button {
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 3px;
-  cursor: pointer;
+/* Estilos text center */
+
+.text-center {
+  text-align: center;
 }
 
-.search-button:hover {
-  background-color: #0056b3;
+.background-color-green{
+  background-color: #84d670;
+}
+
+.border-color-dark{
+  border: 1px solid #333;
+}
+
+.margin-top-5{
+  margin-top: 10px;
 }
